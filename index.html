@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Zhouyuan Huo</title>
+        
+        <script src="Color.js"></script>
+        
+        <script>
+            $(document).ready(function() {
+                              (function() {
+                               //settings
+                               var fadeSpeed = 200, fadeTo = 0.5, topDistance = 30;
+                               var topbarME = function() { $('#uberbar').fadeTo(fadeSpeed,1); }, topbarML = function() { $('#uberbar').fadeTo(fadeSpeed,fadeTo); };
+                               var inside = false;
+                               //do
+                               $(window).scroll(function() {
+                                                position = $(window).scrollTop();
+                                                if(position > topDistance && !inside) {
+                                                //add events
+                                                topbarML();
+                                                $('#uberbar').bind('mouseenter',topbarME);
+                                                $('#uberbar').bind('mouseleave',topbarML);
+                                                inside = true;
+                                                }
+                                                else if (position < topDistance){
+                                                topbarME();
+                                                $('#uberbar').unbind('mouseenter',topbarME);
+                                                $('#uberbar').unbind('mouseleave',topbarML);
+                                                inside = false;
+                                                }
+                                                });
+                               })();
+                              });
+            </script>
+        
+        
+        <style>
+        body {
+                width:80%;
+                margin:0 auto;
+                background-color: #ffffff;
+                margin-top:100px;/*push the page content down*/
+            }
+        
+        h1 {
+            color: black;
+            text-align: center;
+        }
+        h1  span{
+            background-color: rgba(0, 78, 152, 0.1);
+            color: black;
+            padding: 1%;
+            width: 100%;
+            display:inline-block; /*optional */
+        }
+        h2 {
+            color: black;
+        }
+        h3 {
+            color: black;
+        }
+        p {
+            font-family: "Times New Roman";
+            font-size: 20px;
+            text-align:justify
+        }
+        p1 {
+            font-family: "Times New Roman";
+            font-size: 18px;
+            text-align:justify
+        }
+        /* select the top-5 item */
+        ul li:nth-of-type(n+6) {
+             display: none;
+        }
+        
+        /*h2 {
+            color: black;
+            font-size: 18px;
+        }
+        h3 {
+            color: black;
+            font-size: 13px;
+        }
+        p {
+            font-family: "Times New Roman";
+            font-size: 16px;
+            text-align:justify
+        }
+        p1 {
+            font-family: "Times New Roman";
+            font-size: 13px;
+            text-align:justify
+        }
+         */
+        .left_img {
+            float: left;
+        }
+        
+        .clear {
+            clear: both;
+        }
+        
+        #uberbar    {
+            border-bottom:1px solid rgba(0,0,0, 0.8);
+            background:rgba(0, 78, 152, 0.8);
+            padding:1%;
+            position:fixed;
+            top:0;
+            left:0;
+            z-index:2000;
+            width:100%;
+        }
+        div.mylist{
+        width:300px;
+        height:70px;
+        overflow: hidden;
+        }
+        
+        </style>
+        
+    </head>
+    <body>
+        <div id="uberbar" style="width:100%; margin:0 auto; text-align: center; font-size: 20px">
+            <a href="#cv" style="color: white; text-decoration: none">Biography |</a>
+            <a href="#news" style="color: white; text-decoration: none">News |</a> 
+            <a href="#publications" style="color: white; text-decoration: none">Publications |</a>
+            <a href="#misc" style="color: white; text-decoration: none">Services</a>
+        </div>
+
+        <!--<nav>
+            <a href="/html/">HTML</a> |
+            <a href="/css/">CSS</a> |
+            <a href="/js/">JavaScript</a> |
+            <a href="/jquery/">jQuery</a>
+        </nav>
+        <br /><br />-->
+        <section id="cv">
+        <h1><span>Biography</span></h1>
+
+
+        <p>
+            <img src="images/zhou.jpeg" alt="Zhouyuan Huo" align="left" style="margin: 0 30px 5px 30px">
+        Zhouyuan Huo is a research scientist at Google. He received Ph.D. degree in Electrical & Computer Engineering at University of Pittsburgh under the supervision of <b><a href="http://www.pitt.edu/~heh45/" style="color: rgb(0,0,0); text-decoration: none">Prof. Heng Huang</a></b>. 
+        Before that, he received B.Eng degree at Zhejiang University in 2014. His CV can be found  <a href="others/resume.pdf" style="color: rgba(0, 78, 152, 0.8); text-decoration: none">here</a>. <br /> 
+        <br />
+         His recent research interest lies at the intersection of machine learning and distributed optimizaiton, especially federated learning and self-supervised learning. <br />
+        <br /> 
+    <I>Email: </I>huozhouyuan[at]gmail[dot]com     
+          <a href="http://www.larayang.com/" style="color: rgb(255,255,255); text-decoration: none">Q</a> <br />
+        </p>
+
+</div>        
+        <br />
+</section>
+
+<section id="news">
+   	<div class="row section-head">
+        <div class="twelve columns">
+            <br />
+            <br />
+            <h1><span>News</span></h1>
+            <p>
+            <ul style="font-size: 20px">
+                <li><p>One paper was accepted by CVPR 2020.</p></li>
+                <li><p>One paper was accepted by NeurIPS 2019.</p></li>
+                <li><p>One paper was accepted by EMNLP 2019.</p></li>
+            </ul>
+            </p>
+        </div>
+    </div>
+    
+    
+</section>  
+
+<!-- publications Section
+ ================================================== -->
+<section id="publications">
+    
+    <div class="row section-head">
+        
+        <div class="twelve columns">
+            <br />
+            <br />
+            <h1><span>Publications</span></h1>
+
+            <!--<h2>Conference </h2>-->
+            
+            <ol reversed>
+
+            <!---2020 --->
+            <li><p>
+                <strong>On the Acceleration of Deep Learning Model Parallelism with Staleness</strong>
+                <br />
+                <p1>
+                    An Xu, <strong>Zhouyuan Huo</strong>, Heng Huang
+                    <br />
+                    <i>CVPR 2020</i> 
+                    <a href="https://arxiv.org/pdf/1909.02625.pdf" style="text-decoration: none">[Paper]</a>  
+                </p1>
+            </p></li> 
+
+
+            <!---2019--->
+            <li><p>
+                <strong>On Accelerating Training of Transformer-Based Language Models</strong>
+                <br />
+                <p1>
+                    Qian Yang, <strong>Zhouyuan Huo</strong>, Wenlin Wang, Heng Huang, Lawrence Carin
+                    <br />
+                    <i>NeurIPS 2019</i> 
+                    <a href="" style="text-decoration: none">[Paper]</a>  
+                </p1>
+            </p></li> 
+        
+            <li><p>
+                <strong>An End-to-End Generative Architecture for Paraphrase Generation</strong>
+                <br />
+                <p1>
+                    Qian Yang, <strong>Zhouyuan Huo</strong>, Dinghan Shen, Yong Cheng, Wenlin Wang, Guoyin Wang, Lawrence Carin
+                    <br />
+                    <i>EMNLP 2019</i> 
+                    <a href="" style="text-decoration: none">[Paper]</a>  
+                </p1>
+            </p></li>
+
+            <li><p>
+                <strong>Visual-GPS: Ego-Downward and Ambient Video Based Person Location Association</strong>
+                <br />
+                <p1>
+                    Liang Yang, Hao Jiang, <strong>Zhouyuan Huo</strong>, Jizhong Xiao
+                    <br />
+                    <i>CVPR Workshop 2019</i> 
+                    <a href="" style="text-decoration: none">[Paper]</a>  
+                </p1>
+            </p></li>
+
+
+            <li><p>
+                <strong>Scalable and Efficient Pairwise Learning to Achieve Statistical Accuracy</strong>
+                <br />
+                <p1>
+                    Bin Gu, <strong>Zhouyuan Huo</strong>, Heng Huang
+                    <br />
+                    <i>AAAI 2019</i> 
+                    <a href="" style="text-decoration: none">[Paper]</a>  
+                </p1>
+            </p></li>
+
+
+           <li><p>
+                <strong>Faster Gradient-Free Proximal Stochastic Methods for Nonconvex Nonsmooth Optimization</strong>
+                <br />
+                <p1>
+                    Feihu Huang, Bin Gu, <strong>Zhouyuan Huo</strong>, Songcan Chen, Heng Huang
+                    <br />
+                    <i>AAAI 2019</i> 
+                    <a href="" style="text-decoration: none">[Paper]</a>  
+                </p1>
+            </p></li>
+
+
+            <!---2018--->
+
+
+            <li><p>
+                <strong>Training Neural Networks Using Features Replay</strong>
+                <br />
+                <p1>
+                    <strong>Zhouyuan Huo</strong>, Bin Gu, Heng Huang
+                    <br />
+                    <i>NeurIPS 2018 <font color="red">(Spotlight)</font></i> 
+                    <a href="https://arxiv.org/pdf/1807.04511.pdf" style="text-decoration: none">[Paper]</a> 
+                    <a href="https://github.com/slowbull/FeaturesReplay" style="text-decoration: none">[Code]</a>
+                </p1>
+            </p></li>
+
+
+            <li><p>
+                <strong>Asynchronous Dual Free Stochastic Dual Coordinate Ascent for Distributed Data Mining</strong>
+                <br />
+                <p1>
+                    <strong>Zhouyuan Huo</strong>, Heng Huang
+                    <br />
+                    <i>ICDM 2018</i> 
+                    <a href="" style="text-decoration: none">[Paper]</a>  
+                </p1>
+            </p></li>
+
+                
+                     <li><p>
+                <strong>Decoupled Parallel Backpropagation with Convergence Guarantee</strong>
+                <br />
+                <p1>
+                  <strong>Zhouyuan Huo</strong>, Bin Gu, Qian Yang, Heng Huang
+                    <br />
+                    <i>ICML 2018 <font color="red">(Oral)</font></i> 
+                    <a href="http://proceedings.mlr.press/v80/huo18a/huo18a.pdf" style="text-decoration: none">[Paper]</a> 
+                    <a href="https://github.com/slowbull/DDG" style="text-decoration: none">[Code]</a>
+                </p1>
+            </p></li>
+                
+                       <!---1--->
+            <li><p>
+                <strong>Faster Derivative-Free Stochastic Algorithm for Shared Memory Machines</strong>
+                <br />
+                <p1>
+                    Bin Gu*, <strong>Zhouyuan Huo *</strong>, Cheng Deng, Heng Huang (*: Equal contribution)
+                    <br />
+                    <i>ICML 2018 <font color="red">(Oral)</font></i> 
+                    <a href="http://proceedings.mlr.press/v80/gu18a/gu18a.pdf" style="text-decoration: none">[Paper]</a> 
+                </p1>
+            </p></li>
+            
+       
+              
+                
+            <li><p>
+                <strong>Asynchronous Doubly Stochastic Group Regularized Learning</strong>
+                <br />
+                <p1>
+                    Bin Gu,  <strong>Zhouyuan Huo</strong>, Heng Huang
+                    <br />
+                    <i>AISTATS, </i> 2018. 
+                    <a href="http://proceedings.mlr.press/v84/gu18a/gu18a.pdf" style="text-decoration: none">[Paper]</a>  
+                    <a href="https://github.com/slowbull/AsyDSPGplus" style="text-decoration: none">[Code]</a>
+                </p1>
+            </p></li>
+                
+             <li><p>
+                <strong>Accelerated Method for Stochastic Composition Optimization with Nonsmooth Regularization</strong>
+                <br />
+                <p1>
+                    <strong>Zhouyuan Huo</strong>, Bin Gu, Ji Liu, Heng Huang
+                    <br />
+                    <i>AAAI,</i> 2018.
+                    <a href="https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/viewPaper/17203" style="text-decoration: none">[Paper]</a>  
+                    <a href="https://github.com/slowbull/VRSC-PG" style="text-decoration: none">[Code]</a>
+                </p1>
+            </p></li>
+                
+           <li><p>
+                <strong>Inexact Proximal Gradient Methods for Non-Convex and Non-Smooth Optimization</strong>
+                <br />
+                <p1>
+                    Bin Gu, De Wang, <strong>Zhouyuan Huo</strong>, Heng Huang
+                    <br />
+                    <i>AAAI,</i> 2018.
+                    <a href="https://aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/17246" style="text-decoration: none">[Paper]</a>  
+                </p1>
+            </p></li>
+
+           <li><p>
+                <strong>Asynchronous Doubly Stochastic Sparse Kernel Learning</strong>
+                <br />
+                <p1>
+                    Bin Gu, Xin Miao, <strong>Zhouyuan Huo</strong>, Heng Huang
+                    <br />
+                    <i>AAAI,</i> 2018.
+                    <a href="https://aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/17249" style="text-decoration: none">[Paper]</a>  
+                </p1>
+            </p></li>
+
+             <li><p>
+                <strong>New Multi-Task Learning Model to Study the Genotype-Phenotype Associations</strong>
+                <br />
+                <p1>
+                    <strong>Zhouyuan Huo</strong>, Dinggang Shen, Heng Huang
+                    <br />
+                    <i>PSB,</i> 2018.
+                    <a href="https://psb.stanford.edu/psb-online/proceedings/psb18/huo.pdf" style="text-decoration: none">[Paper]</a>  
+                </p1>
+            </p></li>
+
+                
+            <li><p>
+                <strong>Joint Capped Norms Minimization for Robust Matrix Recovery</strong>
+                <br />
+                <p1>
+                    Feiping Nie,  <strong>Zhouyuan Huo</strong>, Heng Huang
+                    <br />
+                    <i>IJCAI,</i> 2017.
+                    <a href="https://www.ijcai.org/proceedings/2017/0356.pdf" style="text-decoration: none">[Paper]</a>  
+                </p1>
+            </p></li>
+            <!---pivotnmt--->
+            <li><p>
+            <strong>Maximizing Multi-Class Margins for Supervised and Semi-Supervised Support Vector Machine</strong>
+            <br />
+            <p1>
+                Jie Xu, Cheng Deng, <strong>Zhouyuan Huo</strong>, Xianglong Liu, Feiping Nie, Heng Huang
+                <br />
+                <i>IJCAI,</i> 2017.
+                <a href="https://www.ijcai.org/proceedings/2017/0440.pdf" style="text-decoration: none">[Paper]</a>  
+            </p1>
+            </p></li>
+            <!---rubrics--->
+            <li><p>
+            <strong>Asynchronous Mini-Batch Gradient Descent with Variance Reduction for Non-Convex Optimization</strong>
+            <br />
+            <p1>
+                 <strong>Zhouyuan Huo </strong>, Heng Huang
+                <br />
+                <i>AAAI,</i> 2017.
+                <a href="https://aaai.org/ocs/index.php/AAAI/AAAI17/paper/view/14999" style="text-decoration: none">[Paper]</a>
+                <a href="https://github.com/slowbull/MPIPlatform" style="text-decoration: none">[Code]</a>
+            </p1>
+            </p></li>
+            <!---peak--->
+            <li><p>
+            <strong>Video Recovery via New Sectional Trace Norm with Capped Norm Constrained Variation and Consistency</strong>
+            <br />
+            <p1>
+                <strong>Zhouyuan Huo</strong>, Shangqian Gao, Weidong Cai, Heng Huang
+                <br />
+                <i>AAAI,</i> 2017.
+                <a href="https://aaai.org/ocs/index.php/AAAI/AAAI17/paper/view/15019" style="text-decoration: none">[Paper]</a>
+            </p1>
+            </p></li>
+            <!---Key Management--->
+            <li><p>
+            <strong>New Probabilistic Multi-Graph Decomposition Model to Identify Consistent Human Brain Network Models</strong>
+            <br />
+            <p1>
+                Dijun Luo,<strong> Zhouyuan Huo </strong>, Yang Wang, Andrew Saykin, Shen Li, Heng Huang
+                <br />
+                <i>ICDM,</i> 2016.
+                <a href="https://ieeexplore.ieee.org/document/7837854/" style="text-decoration: none">[Paper]</a>
+            </p1>
+            </p></li>
+            <!---QCFQND--->
+            <li><p>
+            <strong>Robust and Effective Metric Learning Using Capped Trace Norm: Metric Learning via Capped Trace Norm</strong>
+            <br />
+            <p1>
+                <strong> Zhouyuan Huo</strong>, Feiping Nie, Heng Huang
+                <br />
+                <i>KDD,</i> 2016.
+                <a href="http://www.kdd.org/kdd2016/papers/files/rpp0774-huoA.pdf" style="text-decoration: none">[Paper]</a>
+            </p1>
+            </p></li>
+            <!---QCFEPR--->
+            <li><p>
+            <strong>New Multi-task Learning Model to Predict Alzheimer’s Disease Cognitive Assessment</strong>
+            <br />
+            <p1>
+               <strong> Zhouyuan Huo </strong>, Dinggang Shen, Heng Huang
+                <br />
+                <i>MICCAI,</i> 2016.
+                <a href="http://link.springer.com/chapter/10.1007/978-3-319-46720-7_37" style="text-decoration: none">[Paper]</a>
+            </p1>
+            </p></li>
+
+            <li><p>
+            <strong>Optimal Discrete Matrix Completion</strong>
+            <br />
+            <p1>
+               <strong> Zhouyuan Huo </strong>, Ji Liu, Heng Huang
+                <br />
+                <i>AAAI,</i> 2016.
+                <a href="http://www.cs.rochester.edu/u/jliu/paper/ODMC-AAAI-2016.pdf" style="text-decoration: none">[Paper]</a>
+                <a href="https://github.com/slowbull/DMC" style="text-decoration: none">[Code]</a>
+
+            </p1>
+            </p></li>
+
+             </ol>
+
+        </div>
+        
+    </div>
+    
+    
+</section>
+<!-- /patents-->
+
+
+
+
+<!-- misc Section
+ ================================================== -->
+<section id="misc">
+    
+   	<div class="row section-head">
+        
+        <div class="twelve columns">
+            <br />
+            <br />
+            <h1><span>Services</span></h1>
+         
+
+         <!-- <h2> Reviewer for </h2> -->
+            <ul style="font-size: 20px">
+            <li><p>Conference Program Committee: </p> 
+                <p> NeurIPS (2016, 18-19), ICLR (2019-20), ICML (2019-20), IJCAI (2018-20), AAAI (2018-20), CVPR (2019-20), ICCV (2019), KDD (2020)  </p>
+            </li>
+         <li> <p> Journals Reviewer:  </p>
+            Journal of Machine Learning Research (JMLR), IEEE Transactions on Knowledge and Data Engineering (TKDE), IEEE Transactions on Neural Networks and Learning Systems (TNNLS), Information Sciences </p></li>
+                </ul>
+           <strong>     </strong>
+           
+        </div>
+        
+    </div>
+    
+    
+    
+</section>  <!-- /misc-->
+
+
+
+
+<!--Login:  zju163   Password:   zhouzhou     -->
+<script src="//t1.extreme-dm.com/f.js" id="eXF-zju163-0" async defer></script>
+
+</body>
+</html>
